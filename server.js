@@ -12,6 +12,9 @@ db.connect(function (err) {
     console.log('DB connected Successfully');
 });
 
-server.listen(port, () => {
+const serverRoutes = require('./backend/routes/router');
+
+
+serverRoutes.listen(port, () => {
     console.log(`Server running at port ${port}`);
 });
