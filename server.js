@@ -1,7 +1,10 @@
 require("dotenv").config();
 const db = require('./backend/config/db')
-
-const port = process.env.port | 4000;
+const express = require('express')
+const app = express()
+const bodyparser = require("body-parser");
+const cors = require('cors')
+const serverRoutes = require('./backend/routes/router');
 
 //database connection
 db.connect(function (err) {
@@ -12,9 +15,14 @@ db.connect(function (err) {
     console.log('DB connected Successfully');
 });
 
-const serverRoutes = require('./backend/routes/router');
 
+app.use(bodyparser.urlencoded({ extended: false }));
+app.use(bodyparser.json());
 
-serverRoutes.listen(port, () => {
-    console.log(`Server running at port ${port}`);
+// Api routes
+app.use('/api',cors(),serverRoutes);
+
+const port = process.env.PORT || 4000;
+app.listen(port, () => {
+  console.log(`server start running on port ${port}`);
 });

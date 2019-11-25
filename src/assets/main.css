@@ -1,0 +1,61 @@
+/* Login page  */
+   .login main {
+        flex: 1 0 auto;
+    }
+
+  .login .input-field input[type=date]:focus + label,
+  .login .input-field input[type=text]:focus + label,
+  .login .input-field input[type=email]:focus + label,
+  .login .input-field input[type=password]:focus + label {
+    color: #e91e63;
+  }
+
+  .login .input-field input[type=date]:focus,
+  .login .input-field input[type=text]:focus,
+  .login .input-field input[type=email]:focus,
+  .login .input-field input[type=password]:focus {
+    border-bottom: 2px solid #e91e63;
+    box-shadow: none;
+  }
+
+  .login .logcom{
+    display: inline-block;
+    padding: 32px 48px 0px 48px;
+    border: 1px solid #EEE;
+  }
+
+  .login .flt-right{
+    float: right;
+    padding: 10px 40px;
+  }
+
+  /* sidemenu */
+
+  .sidemenu{
+    width: 200px;
+    position: absolute;
+    border-right: 1px solid darkgray;
+    height: 100%;
+  }
+
+  .sidemenu ul li{
+    padding: 5px 0;
+  }
+  .sidemenu .profile img{
+    border-radius: 50%;
+    width: 100%;
+    padding: 35px 15px;
+  }
+  .sidemenu ul li a{
+    color: black;
+  }
+
+  .sidemenu ul li{
+    padding: 10px 25px;
+  }
+  .sidemenu ul{
+    margin-top: 0;
+  }
+  .sidemenu .profile{
+    border-bottom: 1px solid darkgray;
+  }

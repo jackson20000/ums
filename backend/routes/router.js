@@ -1,27 +1,10 @@
-const http = require('http');
-const url = require('url');
+const express = require("express");
+const router = express.Router();
+const loginCtrl = require('../controller/login');
+const registerCtrl = require('../controller/register');
 
-module.exports = http.createServer((req, res) => {
 
-    // var service = require('./service.js');
-    const reqUrl = url.parse(req.url, true);
+router.post('/login',loginCtrl.login);
+router.post('/register',registerCtrl.register);
 
-    if (reqUrl.pathname == '/' && req.method === 'GET') {
-        res.writeHead(200, {'Content-Type': 'application/json'});
-        res.write(JSON.stringify({'text':'asdasd'}));
-        res.end();
-    }
-     else if (reqUrl.pathname == '/login' && req.method === 'POST') {
-
-        // service.testRequest(req, res);
-        res.writeHead(200, {'Content-Type': 'application/json'});
-        console.log(req);
-        // res.write(JSON.stringify(req.body));
-        res.end();
-
-    } else {
-        // url not found
-        res.write('url not found');
-        res.end();
-    }
-});
+module.exports = router;
