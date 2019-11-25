@@ -1,10 +1,6 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-class List extends Component {
-    constructor() {
-        super();
-    }
-    render() {
+function List() {
         return (
             <div>
                 <table className="highlight responsive-table">
@@ -30,7 +26,6 @@ class List extends Component {
                 </table>
             </div>
         )
-    }
 }
 
 export default List;

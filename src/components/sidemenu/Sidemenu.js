@@ -1,14 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 import '../../assets/main.css'
 import { Link } from 'react-router-dom';
 
 
-class Sidemenu extends Component {
-    render() {
+function Sidemenu() {
         return (
             <div className="sidemenu">
                 <div className="profile">
-                    <img src="https://www.putneyhigh.gdst.net/wp-content/uploads/2018/06/person-placeholder-male-5.jpg"></img>
+                    <img src="https://www.putneyhigh.gdst.net/wp-content/uploads/2018/06/person-placeholder-male-5.jpg" alt=""></img>
                     <center>
                         <p>Welcome User</p>
                     </center>
@@ -21,7 +20,5 @@ class Sidemenu extends Component {
             </div>
         )
     }
-
-}
 
 export default Sidemenu;
