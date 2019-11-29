@@ -1,10 +1,19 @@
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Redirect, Switch, Route } from "react-router-dom";
 import Home from '../pages/Home';
 import Users from '../pages/Users';
 import NotFound from '../components/404/Notfound';
 import User from '../pages/User'
 import React from "react";
 import { connect } from "react-redux";
+
+const PrivateRoute = ({ component: Component, ...rest }) => (
+  <Route {...rest} render={(props) => (
+    true
+      ? <Component {...props} />
+      : <Redirect to='/login' />
+  )} />
+)
+
 function AppNavigator(props) {
   return (
     <Router>
